@@ -10,6 +10,7 @@ UserGameWidget::UserGameWidget(QWidget *parent) :
     addGameUpdate();
     addGame();
     setGameOverview();
+    setGameDynamic();
 }
 
 UserGameWidget::~UserGameWidget()
