@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserGameWidget</class>
+ <widget class="QWidget" name="UserGameWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>868</width>
+    <height>739</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QListWidget{
+	border:0px;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="widgetlayout">
+     <item>
+      <layout class="QVBoxLayout" name="gamelistlayout">
+       <item>
+        <layout class="QHBoxLayout" name="gamelistlayout1">
+         <item>
+          <layout class="QHBoxLayout" name="searchLayout">
+           <item>
+            <widget class="QLineEdit" name="search_edit"/>
+           </item>
+           <item>
+            <widget class="QToolButton" name="search_btn">
+             <property name="text">
+              <string>搜索</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="gamelistLayout11">
+           <item>
+            <layout class="QVBoxLayout" name="gameplaylayout">
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>正在玩的游戏列表</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="gameplay">
+               <property name="flow">
+                <enum>QListView::LeftToRight</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="gameupdatelayout">
+             <item>
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>需要更新的游戏列表</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="gameupdate">
+               <property name="flow">
+                <enum>QListView::LeftToRight</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="gamelistlayout2">
+         <item>
+          <layout class="QVBoxLayout" name="usergamelayout">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>游戏列表</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="wordWrap">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListWidget" name="gameList"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QListWidget" name="gamedynamic"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="gameoverviewlayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>游戏总览</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="headLayout">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>游戏列表</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>游戏时间</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>排名</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QListWidget" name="gameoverview"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
