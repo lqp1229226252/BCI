@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -31,6 +32,7 @@ public:
     QLabel *label_3;
     QLineEdit *lineEdit_password;
     QLineEdit *lineEdit_account;
+    QComboBox *comboBox_account;
     QPushButton *pushButton_land;
     QPushButton *pushButton_wechart;
     QPushButton *pushButton_qq;
@@ -183,7 +185,7 @@ public:
         lineEdit_password->setEchoMode(QLineEdit::Password);
         lineEdit_account = new QLineEdit(widget);
         lineEdit_account->setObjectName(QString::fromUtf8("lineEdit_account"));
-        lineEdit_account->setGeometry(QRect(10, 50, 371, 41));
+        lineEdit_account->setGeometry(QRect(10, 50, 351, 41));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Arial"));
         font1.setPointSize(7);
@@ -193,6 +195,13 @@ public:
         lineEdit_account->setFont(font1);
         lineEdit_account->setStyleSheet(QString::fromUtf8("font: 7pt \"Arial\";"));
         lineEdit_account->setFrame(true);
+        comboBox_account = new QComboBox(widget);
+        comboBox_account->setObjectName(QString::fromUtf8("comboBox_account"));
+        comboBox_account->setGeometry(QRect(10, 50, 371, 41));
+        comboBox_account->raise();
+        label_3->raise();
+        lineEdit_password->raise();
+        lineEdit_account->raise();
         pushButton_land = new QPushButton(login);
         pushButton_land->setObjectName(QString::fromUtf8("pushButton_land"));
         pushButton_land->setGeometry(QRect(280, 300, 371, 60));

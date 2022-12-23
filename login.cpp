@@ -16,6 +16,8 @@ login::login(QWidget *parent)
     setWindowFlags(Qt::Window|Qt::FramelessWindowHint);
 
     initMysql();
+
+    initInfo();
 }
 
 login::~login()
@@ -78,6 +80,38 @@ void login::initMysql()
 
 void login::initInfo()
 {
+    QString filename = "userInfo.json";
+    QFile file(filename);
+    file.open(QIODevice::ReadOnly);
+    QJsonDocument jdc(QJsonDocument::fromJson(file.readAll()));
+    file.close();
+    QJsonObject obj= jdc.object();
+    QStringList keys = obj.keys();
+//    qDebug()<<obj;
+//    qDebug()<<keys;
+    //将历史账号加载到combox里
+    for (int i = 0 ;i< keys.size()-3;i++){
+//        qDebug()<<"====";
+        ui->comboBox_account->addItem(keys[i]);
+    }
+    //设置自动登录、保存密码的状态和上一次登录的账号设置到账号和密码栏里
+    ui->comboBox_account->setCurrentText(obj.value("lastAccount").toString());
+    ui->checkBox_autoLand->setChecked(obj.value("isAutoLand").toInt());
+    ui->checkBox_savePassword->setChecked(obj.value("isSavePassword").toInt());
+    ui->lineEdit_account->setText(obj.value("lastAccount").toString());
+    ui->lineEdit_password->setText(obj.value(
+                                       obj.value("lastAccount").toString()
+                                       ).toString());
+
+    //更换账号时的出发函数
+    connect(ui->comboBox_account,&QComboBox::currentTextChanged,this,[=](){
+        ui->lineEdit_account->setText(keys[ui->comboBox_account->currentIndex()]);
+        ui->lineEdit_password->setText(obj.value(
+                                           keys[ui->comboBox_account->currentIndex()]
+                                       ).toString());
+        ui->checkBox_autoLand->setChecked(false);
+        ui->checkBox_savePassword->setChecked(false);
+    });
 
 }
 
@@ -118,12 +152,10 @@ void login::on_pushButton_land_clicked()
 //    QString password= ui->lineEdit_password->text();
 //    int isAutoLand = ui->checkBox_autoLand->isChecked();
 
-
 //    QJsonDocument jdc(QJsonDocument::fromJson(file.readAll()));
 //    file.close();
 
 //    QJsonObject obj= jdc.object();
-
 
 //    obj.insert("isAutoLand",isAutoLand); //0或1
 

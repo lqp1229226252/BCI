@@ -250,7 +250,7 @@ outline:nonoe;</string>
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>371</width>
+      <width>351</width>
       <height>41</height>
      </rect>
     </property>
@@ -273,6 +273,20 @@ outline:nonoe;</string>
      <string>请输入用户名</string>
     </property>
    </widget>
+   <widget class="QComboBox" name="comboBox_account">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>371</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <zorder>comboBox_account</zorder>
+   <zorder>label_3</zorder>
+   <zorder>lineEdit_password</zorder>
+   <zorder>lineEdit_account</zorder>
   </widget>
   <widget class="QPushButton" name="pushButton_land">
    <property name="geometry">

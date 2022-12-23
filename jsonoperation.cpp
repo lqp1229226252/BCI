@@ -21,6 +21,7 @@ void JsonOperation::landID(QString account, QString password, int isAutoLand, in
     QJsonObject obj= jdc.object();
 
     obj.insert("isAutoLand",isAutoLand); //0或1
+    obj.insert("isSavePassword",isSavePassword);
     obj.insert("lastAccount",account);  //这次登录的账号
     if(isSavePassword){
         //保存密码到配置文件

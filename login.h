@@ -71,6 +71,8 @@ private:
     //初始化变量
     void initInfo();
     QJsonArray *json;
+    QVector<QVector <QString>> account_password;
+
 
 
 };
